@@ -41,10 +41,10 @@ class Clone(Client):
             await self.send_photo(
                 chat,
                 "https://telegra.ph/file/2b49eab80cc0efddf5515.jpg",
-                "Bot Started.",
+                "Clone Bot Started.",
             )
-        LOGGER.info(f"Music X dlBot Started As {BOT_INFO.username}\n")
+        LOGGER.info(f"Clone Bot Started As {BOT_INFO.username}\n")
 
     async def stop(self, *args):
         await super().stop()
-        LOGGER.info("Bot Stopped, Bye.")
+        LOGGER.info("Clone Bot Stopped, Bye.")
