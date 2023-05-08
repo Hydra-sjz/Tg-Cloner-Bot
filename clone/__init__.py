@@ -18,7 +18,7 @@ LOGGER = logging.getLogger(__name__)
 
 #os.system("apt install git curl python3-pip ffmpeg -y")
 
-class Mbot(Client):
+class Clone(Client):
     def __init__(self):
         name = self.__class__.__name__.lower()
         super().__init__(
