@@ -1,3 +1,5 @@
+#kanged from https://github.com/ITZ-ZAID/Cloner
+
 import os
 import re
 import asyncio
