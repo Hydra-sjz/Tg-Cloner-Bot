@@ -24,7 +24,7 @@ BOT_TOKEN = environ["BOT_TOKEN"]
 
 #os.system("apt install git curl python3-pip ffmpeg -y")
 
-class Clone(Client):
+class Mbot(Client):
     def __init__(self):
         name = self.__class__.__name__.lower()
         super().__init__(
@@ -37,3 +37,20 @@ class Clone(Client):
             sleep_threshold=30,
         )
 
+    async def start(self):
+        global BOT_INFO
+        await super().start()
+        BOT_INFO = await self.get_me()
+        if not path.exists("/tmp/thumbnails/"):
+            mkdir("/tmp/thumbnails/")
+        for chat in AUTH_CHATS:
+            await self.send_photo(
+                chat,
+                "https://telegra.ph/file/2b49eab80cc0efddf5515.jpg",
+                "Bot Started.",
+            )
+        LOGGER.info(f"Music X dlBot Started As {BOT_INFO.username}\n")
+
+    async def stop(self, *args):
+        await super().stop()
+        LOGGER.info("Bot Stopped, Bye.")
