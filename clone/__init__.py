@@ -1,7 +1,7 @@
 
 import logging
 from os import environ, mkdir, path, sys
-
+from config import BOT_TOKEN, API_HASH, API_ID, AUTH_CHATS
 from dotenv import load_dotenv
 from pyrogram import Client
 
